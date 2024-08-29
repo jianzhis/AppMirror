@@ -9,7 +9,7 @@ keywords:
 - database
 - sql
 maintainers:
-- email: your.email@example.com  # 请使用您的邮箱
+- email: yours.email@example.com  # 请使用您的邮箱
   name: jianzhis  # 请使用您的 GitHub 用户名
 name: mysql
 sources:

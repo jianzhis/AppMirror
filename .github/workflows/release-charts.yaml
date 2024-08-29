@@ -34,31 +34,14 @@ jobs:
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.3.1
 
-      - name: Debug - List directory contents
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Root directory contents:"
-          ls -la
-          echo "Charts directory contents:"
-          ls -la charts
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.5.0
 
       - name: Run chart-testing (lint)
-        run: |
-          ct lint --all --debug || true
-          echo "Checking individual charts:"
-          for chart in charts/*; do
-            if [ -d "$chart" ]; then
-              echo "Linting $chart"
-              helm lint "$chart" --debug
-              echo "Templating $chart"
-              helm template "$chart" --debug
-            fi
-          done
+        run: ct lint --all --debug
 
       - name: Run chart-testing (install)
-        run: |
-          ct install --all --debug
+        run: ct install --all --debug
 
   release:
     needs: lint-test

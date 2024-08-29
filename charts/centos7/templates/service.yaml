@@ -1,12 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "centos.fullname" . }}
+  name: {{ include "centos7.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "centos.name" . }}
-    helm.sh/chart: {{ include "centos.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "centos7.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -15,5 +12,4 @@ spec:
       protocol: TCP
       name: {{ .Values.service.name }}
   selector:
-    app.kubernetes.io/name: {{ include "centos.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    {{- include "centos7.selectorLabels" . | nindent 4 }}

@@ -1,9 +1,10 @@
+# Number of replicas to deploy
 replicaCount: 1
 
 image:
   registry: registry.yunna.net
   repository: phusion/baseimage
-  tag: "latest"
+  tag: "latest"  # Consider using a specific version instead of "latest"
   pullPolicy: IfNotPresent
 
 service:
@@ -11,6 +12,7 @@ service:
   port: 22
   name: ssh
 
+# Readiness probe configuration
 readinessProbe:
   exec:
     command:
@@ -20,6 +22,7 @@ readinessProbe:
   periodSeconds: 3
   failureThreshold: 6
 
+# Liveness probe configuration
 livenessProbe:
   exec:
     command:
@@ -28,6 +31,7 @@ livenessProbe:
   initialDelaySeconds: 5
   periodSeconds: 3
 
+# Resource limits and requests
 resources: {}
   # limits:
   #   cpu: 100m
@@ -36,8 +40,11 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+# Node selector configuration
 nodeSelector: {}
 
+# Tolerations configuration
 tolerations: []
 
+# Affinity configuration
 affinity: {}

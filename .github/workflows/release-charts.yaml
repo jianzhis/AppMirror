@@ -39,15 +39,20 @@ jobs:
           echo "Root directory:"
           ls -R
 
+      - name: List git changes
+        run: |
+          git fetch origin ${{ github.event.before }}
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+
       - name: Run chart-testing (lint)
         run: |
           cd charts
-          ct lint --target-branch ${{ github.event.pull_request.base.ref || github.event.repository.default_branch }}
+          ct lint --all --debug
 
       - name: Run chart-testing (install)
         run: |
           cd charts
-          ct install
+          ct install --all --debug
 
   release:
     needs: lint-test

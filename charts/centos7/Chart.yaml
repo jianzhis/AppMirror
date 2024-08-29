@@ -1,14 +1,15 @@
 apiVersion: v2
-name: centos
+name: centos7
 description: A Helm chart for deploying a CentOS 7 container with tools on Kubernetes
 type: application
-version: 1.0.0
+version: 1.0.0-rc.1  # 在 test 分支上使用这个版本号
+# version: 1.0.0  # 在 main 分支上使用这个版本号
 appVersion: "7"
 icon: https://www.centos.org/assets/img/centos-logo.png
 maintainers:
-- name: Your Name
-  email: your-email@example.com
+- name: jianzhis  # 请使用您的 GitHub 用户名
+  email: your.email@example.com  # 请使用您的实际邮箱
 sources:
-- https://github.com/jianzhis/PublicMirror
+- https://github.com/jianzhis/AppMirror/tree/main/charts/centos7
 annotations:
   "app.kubesphere.io/category": "Operating System"

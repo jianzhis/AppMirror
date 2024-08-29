@@ -3,7 +3,7 @@ appVersion: 1.18.0
 description: nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
 maintainers:
-- email: your.email@example.com  # 请使用您的邮箱
+- email: yours.email@example.com  # 请使用您的邮箱
   name: jianzhis  # 请使用您的 GitHub 用户名
 name: nginx
 sources:

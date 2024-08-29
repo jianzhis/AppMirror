@@ -51,7 +51,7 @@ jobs:
 
       - name: Package and push to test directory
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -89,7 +89,7 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.1
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "${{ secrets.GH_TOKEN }}"
         with:
           charts_dir: charts
           charts_repo_url: https://jianzhis.github.io/AppMirror

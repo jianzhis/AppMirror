@@ -1,4 +1,4 @@
-name: Release Helm Charts
+name: Helm Chart CI/CD
 
 on:
   push:
@@ -35,19 +35,15 @@ jobs:
         uses: helm/chart-testing-action@v2.3.1
 
       - name: Run chart-testing (lint)
-        run: |
-          ct lint --all --debug || true
-        continue-on-error: true
+        run: ct lint --all
 
       - name: Run chart-testing (install)
-        run: |
-          ct install --all --debug || true
-        continue-on-error: true
+        run: ct install --all
 
   release:
     needs: lint-test
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,4 +61,4 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           charts_dir: charts
-          charts_repo_url: https://jianzhis.github.io/AppMirror/${{ github.ref_name }}
+          charts_repo_url: https://jianzhis.github.io/AppMirror

@@ -34,24 +34,21 @@ jobs:
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.3.1
 
-      - name: List directory contents
+      - name: Debug - List directory contents
         run: |
-          echo "Root directory:"
-          ls -R
-
-      - name: List git changes
-        run: |
-          git fetch origin ${{ github.event.before }}
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+          echo "Current directory:"
+          pwd
+          echo "Root directory contents:"
+          ls -la
+          echo "Charts directory contents:"
+          ls -la charts
 
       - name: Run chart-testing (lint)
         run: |
-          cd charts
           ct lint --all --debug
 
       - name: Run chart-testing (install)
         run: |
-          cd charts
           ct install --all --debug
 
   release:

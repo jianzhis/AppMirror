@@ -7,7 +7,7 @@ appVersion: "7"
 icon: https://www.centos.org/assets/img/centos-logo.png
 maintainers:
 - name: jianzhis  # 使用您的 GitHub 用户名
-  email: your.email@example.com  # 使用您的实际邮箱
+  email: yours.email@example.com  # 使用您的实际邮箱
 sources:
 - https://github.com/jianzhis/AppMirror/tree/main/charts/centos7
 annotations:

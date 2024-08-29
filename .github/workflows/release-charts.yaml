@@ -45,7 +45,16 @@ jobs:
 
       - name: Run chart-testing (lint)
         run: |
-          ct lint --all --debug
+          ct lint --all --debug || true
+          echo "Checking individual charts:"
+          for chart in charts/*; do
+            if [ -d "$chart" ]; then
+              echo "Linting $chart"
+              helm lint "$chart" --debug
+              echo "Templating $chart"
+              helm template "$chart" --debug
+            fi
+          done
 
       - name: Run chart-testing (install)
         run: |

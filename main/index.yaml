@@ -5,7 +5,7 @@ entries:
       app.kubesphere.io/category: Operating System
     apiVersion: v2
     appVersion: "7"
-    created: "2024-07-12T08:11:21.70065681Z"
+    created: "2024-08-30T14:38:44.082219944Z"
     description: A Helm chart for deploying a CentOS 7 container with tools on Kubernetes
     digest: 33e8446382d4968ab1d38d67b1a34c76e54b40d4f1dfa2677638c1866fc95afe
     icon: https://www.centos.org/assets/img/centos-logo.png
@@ -19,14 +19,37 @@ entries:
     urls:
     - https://jianzhis.github.io/AppMirror/main/centos-1.0.0.tgz
     version: 1.0.0
+  centos7:
+  - apiVersion: v2
+    appVersion: "7"
+    created: "2024-08-30T14:38:44.082677217Z"
+    description: A Helm chart for deploying a CentOS 7 container with tools on Kubernetes
+    digest: 78844eb28a74a58410a43c07619fd737f8bae54f8258ce63685f1031743fe05b
+    home: https://github.com/jianzhis/AppMirror
+    icon: https://www.centos.org/assets/img/centos-logo.png
+    keywords:
+    - centos
+    - linux
+    maintainers:
+    - email: your.email@example.com
+      name: jianzhi
+      url: https://github.com/jianzhis
+    name: centos7
+    sources:
+    - https://github.com/jianzhis/AppMirror/tree/main/charts/centos7
+    type: application
+    urls:
+    - https://jianzhis.github.io/AppMirror/main/centos7-1.0.2.tgz
+    version: 1.0.2
   mysql:
   - annotations:
       app.kubesphere.io/category: Database & Cache
-    apiVersion: v1
+    apiVersion: v2
     appVersion: 5.7.31
-    created: "2024-07-12T08:11:21.701483083Z"
-    description: Fast, reliable, scalable, and easy to use open-source relational database system.
-    digest: 23e2f5ab71ea0ae0a5fa97b238efdc5e4fdec0d1b157d461032d6eed9ad31621
+    created: "2024-08-30T14:38:44.083405757Z"
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system.
+    digest: df542e188451b5cf5465f3ac62b679e6d6582347031d698bf85a68d2e7419cdf
     home: https://www.mysql.com/
     icon: https://www.mysql.com/common/logos/powered-by-mysql-167x86.png
     keywords:
@@ -34,33 +57,31 @@ entries:
     - database
     - sql
     maintainers:
-    - email: o.with@sportradar.com
-      name: olemarkus
-    - email: viglesias@google.com
-      name: viglesiasce
+    - email: yours.email@example.com
+      name: jianzhis
     name: mysql
     sources:
-    - https://github.com/kubernetes/charts
-    - https://github.com/docker-library/mysql
+    - https://github.com/jianzhis/AppMirror/tree/main/charts/mysql
     urls:
     - https://jianzhis.github.io/AppMirror/main/mysql-1.6.8.tgz
     version: 1.6.8
   nginx:
   - annotations:
       app.kubesphere.io/category: Networking
-    apiVersion: v1
+    apiVersion: v2
     appVersion: 1.18.0
-    created: "2024-07-12T08:11:21.702005698Z"
-    description: nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
-    digest: 2539de4f938881b534114b3a7076c84cfcf5e43ca313ecfa3af5773d7a7949c0
+    created: "2024-08-30T14:38:44.083908586Z"
+    description: nginx is an HTTP and reverse proxy server, a mail proxy server, and
+      a generic TCP/UDP proxy server, originally written by Igor Sysoev.
+    digest: 48f980f340dfe8d18d3b571788a4cac7af9bb11e151ee5578dd12bd972a88b26
     icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
     maintainers:
-    - email: kubesphere@yunify.com
-      name: KubeSphere Community
+    - email: yours.email@example.com
+      name: 云纳官方
     name: nginx
     sources:
-    - https://github.com/kubesphere/helm-charts/tree/master/src/main/nginx
+    - https://github.com/jianzhis/AppMirror/tree/main/charts/nginx
     urls:
     - https://jianzhis.github.io/AppMirror/main/nginx-1.3.5.tgz
     version: 1.3.5
-generated: "2024-07-12T08:11:21.700064585Z"
+generated: "2024-08-30T14:38:44.08170862Z"

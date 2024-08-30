@@ -4,7 +4,7 @@ description: nginx is an HTTP and reverse proxy server, a mail proxy server, and
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
 maintainers:
 - email: yours.email@example.com  # 请使用您的邮箱
-  name: jianzhis  # 请使用您的 GitHub 用户名
+  name: 云纳官方  # 请使用您的 GitHub 用户名
 name: nginx
 sources:
 - https://github.com/jianzhis/AppMirror/tree/main/charts/nginx

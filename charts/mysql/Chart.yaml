@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: 5.7.31
+description: Fast, reliable, scalable, and easy to use open-source relational database system.
+engine: gotpl
+home: https://www.mysql.com/
+icon: https://www.mysql.com/common/logos/powered-by-mysql-167x86.png
+keywords:
+- mysql
+- database
+- sql
+maintainers:
+- email: yours.email@example.com  # 请使用您的邮箱
+  name: jianzhis  # 请使用您的 GitHub 用户名
+name: mysql
+sources:
+- https://github.com/jianzhis/AppMirror/tree/main/charts/mysql
+version: 1.6.8
+annotations:
+  "app.kubesphere.io/category": "Database & Cache"
